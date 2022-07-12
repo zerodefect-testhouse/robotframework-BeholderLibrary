@@ -4,7 +4,6 @@ A Robot Framework's library to integrate with the Zero-Defect's Visual Regressio
 
 
 ## Installation
-------------
 
 The recommended installation method is using [pip](http://pip-installer.org/):
 
@@ -29,7 +28,6 @@ perform the installation.
 
 
 ## Usage
------
 
 To use DejavuLibrary in Robot Framework tests, the library needs to
 first be imported using the `Library` setting as any other library.

@@ -2,6 +2,7 @@
 from robot.api.deco import keyword
 from robot.libraries.BuiltIn import BuiltIn
 import requests
+from typing import Optional
 import os
 
 class DejavuLibrary(object):
@@ -73,6 +74,12 @@ class DejavuLibrary(object):
 
 
 	@keyword(name='Take Dejavu Snapshot')
-	def take_snapshot(self, custom_css=None):
+	def take_snapshot(self, custom_css: Optional[str] = None):
+		"""
+		Takes a snapshot of the current page and send to Dejavu's platform to be build.
+
+        ``custom_css`` argument specifies the custom css that will be added to the page for 
+		the snapshot, this can be used to remove dynamic elements of the page. [optional]
+		"""
 		test_name = BuiltIn().get_variable_value("${TEST NAME}")
 		self.capture_snapshot(test_name=test_name, custom_css=custom_css)

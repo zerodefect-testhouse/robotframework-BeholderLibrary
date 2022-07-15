@@ -9,7 +9,7 @@ class DejavuLibrary(object):
 
 	def __init__(self):
 		self.original_style = None
-		self.dejavu_url = 'http://127.0.0.1:8000'
+		self.dejavu_url = 'http://177.136.76.173:8881'
 		self.build_number = None
 
 	def get_driver(self):

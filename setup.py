@@ -8,12 +8,12 @@ with open(Path.joinpath(CUR_DIR, "README.md"), "r") as fh:
 
 
 setup(
-    name                 = 'robotframework-dejavu',  
+    name                 = 'robotframework-beholder',  
     version              = '0.1.0',
-    keywords             = 'robotframework testing testautomation visualregression selenium webdriver web',
+    keywords             = 'robotframework testing testautomation beholder visualregression selenium webdriver web',
     package_dir          = {'': 'src'},
     packages             = find_packages('src'),
-    package_data         = {"DejavuLibrary": 
+    package_data         = {"BeholderLibrary": 
                                 ['*.py']
                             },
     install_requires     = [
@@ -24,10 +24,10 @@ setup(
     include_package_data = True,
     author               = "Zero-Defect Test House",
     author_email         = "centro.tecnologia@zero-defect.com.br",
-    description          = "A Robot Framework package to integrate with Dejavu, the Zero-Defect's Visual Regression Testing platform.",
+    description          = "A Robot Framework package to integrate with Beholder, the Zero-Defect's Visual Regression Testing platform.",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/zerodefect-testhouse/robotframework-DejavuLibrary",
+    url="https://github.com/zerodefect-testhouse/robotframework-BeholderLibrary",
     classifiers          = [
                             "Programming Language :: Python :: 3",
                             "License :: OSI Approved :: MIT License",

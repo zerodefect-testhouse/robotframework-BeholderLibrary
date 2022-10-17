@@ -30,7 +30,8 @@ class BeholderLibrary(object):
 			}
 			print ("######## SEND REQUEST TO GET BUILD_NUMBER")
 			response = requests.post(f"{self.beholder_url}/api/v1/start_project_build/", data=payload)
-			print(response.text)
+			if not response.ok:
+				raise PermissionError(response.json()['error'])
 			self.build_number = response.json()["build_number"]
 			BuiltIn().set_global_variable('${BEHOLDER_BUILD_NUMBER}', self.build_number)
 
@@ -48,6 +49,8 @@ class BeholderLibrary(object):
 			}
 		print ("######## SEND REQUEST TO UPLOAD SNAPSHOT")
 		response = requests.post(f"{self.beholder_url}/api/v1/upload_snapshot/", data=payload, files=files)
+		if not response.ok:
+			raise PermissionError(response.json()['error'])
 
 	def capture_snapshot(self, test_name, custom_css=None):
 		self.driver = self.get_driver()

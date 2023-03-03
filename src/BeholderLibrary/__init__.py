@@ -101,7 +101,7 @@ class BeholderLibrary(object):
 
 
 	@keyword(name='Take Beholder Snapshot')
-	def take_snapshot(self, custom_css: Optional[str] = None, build_type: Optional[str]=None):
+	def take_snapshot(self, custom_css: Optional[str] = None, build_type: Optional[str]='automation-review'):
 		"""
 		Takes a snapshot of the current page and send to Beholder's platform to be build.
 
@@ -110,6 +110,14 @@ class BeholderLibrary(object):
 		``build_type`` argument specificies the build type ('automation-review' or 'layout-audit')
 		default: 'automation-review'. [optional]
 		"""
+
+		if build_type == 'automation-review':
+			self.build_type = 'automation-review'
+		elif build_type == 'layout-audit':
+			self.build_type = 'layout-audit'
+		else:
+			raise ValueError("Invalid build_type parameter, only 'automation-review' and 'layout-audit' are allowed.")
+		
 		suite_name = BuiltIn().get_variable_value("${SUITE NAME}")
 		test_name = BuiltIn().get_variable_value("${TEST NAME}")
 		print(test_name)
@@ -122,7 +130,8 @@ class BeholderLibrary(object):
 		Takes a snapshot from a element of the current page using the given locator and send to Beholder's platform to be build.
 
         ``locator`` argument specifies the element locator that will be uploaded.
-		``build_type`` argument specificies the build type ('automation-review' or 'layout-audit'). [optional]
+		``build_type`` argument specificies the build type ('automation-review' or 'layout-audit')
+		default: 'automation-review'. [optional]
 		"""
 		if build_type == 'automation-review':
 			self.build_type = 'automation-review'

@@ -11,7 +11,7 @@ class BeholderLibrary(object):
 		
 		self.original_style = None
 		self.beholder_url = 'http://177.136.76.173:8881'
-
+		
 		self.selib = BuiltIn().get_library_instance('SeleniumLibrary')
 		self.build_number = None
 
@@ -80,7 +80,6 @@ class BeholderLibrary(object):
 	def capture_element_snapshot(self, locator, suite_name, test_name, custom_css=None):
 		self.driver = self.get_driver()
 		self.start_build()
-		
 
 		element = self.selib.find_element(locator)
 		snapshot = element.screenshot_as_png

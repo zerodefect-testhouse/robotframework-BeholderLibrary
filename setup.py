@@ -8,7 +8,7 @@ with open(Path.joinpath(CUR_DIR, "README.md"), "r") as fh:
 
 
 setup(
-    name                 = 'robotframework-beholder',  
+    name                 = 'robotframework-beholderlibrary',  
     version              = '0.1.0',
     keywords             = 'robotframework testing testautomation beholder visualregression selenium webdriver web',
     package_dir          = {'': 'src'},

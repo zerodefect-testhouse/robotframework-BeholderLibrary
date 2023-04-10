@@ -8,7 +8,7 @@ A Robot Framework's library to integrate with the Zero-Defect's Visual Regressio
 The recommended installation method is using [pip](http://pip-installer.org/):
 
 ```sh
-pip install robotframework-beholder
+pip install robotframework-beholderlibrary
 ```
 
 Running this command installs also the latest [SeleniumLibrary](https://github.com/robotframework/SeleniumLibrary) and [Robot Framework](https://robotframework.org)

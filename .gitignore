@@ -3,5 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+dist/*
+src/robotframework_beholder.egg-info/*
+
 # Environment
 venv/
+

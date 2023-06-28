@@ -1,6 +1,6 @@
 # Robot Framework - BeholderLibrary
 
-A Robot Framework's library to integrate with the Zero-Defect's Visual Regression testing platform.
+A Robot Framework's library to integrate with the Zero Defect's Visual Regression testing platform.
 
 
 ## Installation

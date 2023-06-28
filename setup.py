@@ -22,9 +22,9 @@ setup(
                             'robotframework-seleniumlibrary>=6.0.0'
                            ],
     include_package_data = True,
-    author               = "Zero-Defect Test House",
+    author               = "Zero Defect Test House",
     author_email         = "centro.tecnologia@zero-defect.com.br",
-    description          = "A Robot Framework package to integrate with Beholder, the Zero-Defect's Visual Regression Testing platform.",
+    description          = "A Robot Framework package to integrate with Beholder, the Zero Defect's Visual Regression Testing platform.",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/zerodefect-testhouse/robotframework-BeholderLibrary",

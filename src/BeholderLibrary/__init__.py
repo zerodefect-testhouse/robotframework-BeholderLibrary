@@ -10,7 +10,7 @@ class BeholderLibrary(object):
 	def __init__(self):
 		
 		self.original_style = None
-		self.beholder_url = 'http://177.136.76.173:8881'
+		self.beholder_url = 'https://beholder.zero-defect.com.br/api/v1'
 
 		self.selib = BuiltIn().get_library_instance('SeleniumLibrary')
 		self.build_number = None
@@ -29,11 +29,12 @@ class BeholderLibrary(object):
 				"build_number": "None"
 			}
 			print ("######## SEND REQUEST TO GET BUILD_NUMBER")
+			print(f"PAYLOAD: {payload}")
 			if self.build_type == 'automation-review':
-				response = requests.post(f"{self.beholder_url}/api/v1/automation-review/start_project_build/", data=payload)
+				response = requests.post(f"{self.beholder_url}/automation-review/start-project-build/", data=payload)
 			elif self.build_type == 'layout_audit':
 
-				response = requests.post(f"{self.beholder_url}/api/v1/layout-audit/start_project_build/", data=payload)
+				response = requests.post(f"{self.beholder_url}/layout-audit/start-project-build/", data=payload)
 			if not response.ok:
 				raise PermissionError(response.json()['error'])
 			self.build_number = response.json()["build_number"]
@@ -54,9 +55,9 @@ class BeholderLibrary(object):
 			}
 		print ("######## SEND REQUEST TO UPLOAD SNAPSHOT")
 		if self.build_type == 'automation-review':
-			response = requests.post(f"{self.beholder_url}/api/v1/automation-review/upload_snapshot/", data=payload, files=files)
+			response = requests.post(f"{self.beholder_url}/automation-review/upload-snapshot/", data=payload, files=files)
 		elif self.build_type == 'layout-review':
-			response = requests.post(f"{self.beholder_url}/api/v1/layout-audit/upload_snapshot/", data=payload, files=files)
+			response = requests.post(f"{self.beholder_url}/layout-audit/upload-snapshot/", data=payload, files=files)
 		if not response.ok:
 			raise PermissionError(response.json()['error'])
 
